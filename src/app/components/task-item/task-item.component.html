@@ -1,0 +1,7 @@
+<div class="wrapper">
+  <div class="contentBox">
+    <input class="checkbox"  type="checkbox" [checked]="task.completed" [id]="task.id" (click)="taskCompleted(task)" >
+    <div class="text">{{task.text}}</div>
+    <div class="deleteThisOne">&#10006;</div>
+  </div>
+</div>

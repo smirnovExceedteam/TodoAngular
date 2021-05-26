@@ -1,0 +1,39 @@
+.wrapper
+{
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+
+}
+.text
+{
+  padding-left: 10px;
+  font-size: 15px;
+  font-weight: 500;
+}
+.contentBox
+{
+  width: 100%;
+  display: flex;
+  border: 1px solid rgba(226, 226, 226, 0.59);
+  border-bottom: none;
+}
+.checkbox
+{
+  opacity: .6;
+}
+.deleteThisOne
+{
+  cursor:pointer;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  opacity: .0;
+  font-size: 15px ;
+
+}
+.deleteThisOne:hover
+{
+  opacity: 0.2;
+}
