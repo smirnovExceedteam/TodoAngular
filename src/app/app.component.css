@@ -1,0 +1,15 @@
+.wrapper
+{
+    height: 300px;
+    width: 700px;
+    margin:0 auto;
+    background-color: rgba(241, 241, 241, 0.705);
+
+}
+.shadowWrapper
+{
+  width: 50%;
+  margin: 0 auto;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.15), 0 10px 0 -5px #eee, 0 10px 2px -4px rgba(0, 0, 0, 0.15),
+  0 20px 0 -10px #eee, 0 20px 2px -9px rgba(0, 0, 0, 0.15);
+}
