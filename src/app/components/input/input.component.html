@@ -1,7 +1,7 @@
 <div class="wrapper">
     <div class="mainContent">
-      <img src="../../../assets/img/strelka.png" alt="">
-        <input [ngStyle]="inputStyle" class="mainInput" type="text" placeholder="What needs to be done"(keydown.enter)="sendTaskText($event)"(click)="onFocus()">
+      <img src="../../../assets/img/strelka.png" alt="" (click)="selectAll()" *ngIf="this.localLeft != 0">
+        <input class="mainInput" type="text" placeholder="What needs to be done"(keydown.enter)="sendTaskText($event)">
     </div>
 </div>
 

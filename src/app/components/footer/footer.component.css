@@ -1,0 +1,64 @@
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.filter > div {
+  border: 1px solid rgba(0, 0, 0, 0);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+
+.filter {
+  display: flex;
+}
+
+.container {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  border: 1px solid rgba(180, 180, 180, 0.199);
+  border-radius: 2px;
+  background-color: #fff;
+  font-size: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.container > div{
+  flex-basis:70px;
+}
+
+.clearSelected {
+  cursor: pointer;
+}
+
+.hideFooter {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+.hideButton{
+  opacity: 0;
+}
+
+.currentFilter {
+  border: none;
+  border: 1px solid #d7d7d7 !important;
+  border-radius: 2px;
+}
+.filterStyle{
+  padding: 1px;
+}
+
+.leftCounter{
+  margin: 2px;
+}

@@ -1,39 +1,138 @@
-.wrapper
-{
+.wrapper {
   display: flex;
   width: 100%;
   margin: 0 auto;
   background-color: #fff;
-
 }
-.text
-{
+
+.text {
   padding-left: 10px;
+  padding-top: 1px;
   font-size: 15px;
   font-weight: 500;
+
 }
-.contentBox
-{
+
+.contentBox {
   width: 100%;
   display: flex;
   border: 1px solid rgba(226, 226, 226, 0.59);
   border-bottom: none;
 }
-.checkbox
-{
+
+.checkbox {
   opacity: .6;
 }
-.deleteThisOne
-{
-  cursor:pointer;
+
+.deleteThisOne {
+  cursor: pointer;
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  opacity: .0;
-  font-size: 15px ;
+  visibility: hidden;
+  font-size: 15px;
+  padding-right: 5px;
+  margin-left: auto;
+  width: fit-content;
+  color: red !important;
+}
+
+.textDecorateClass {
+  opacity: .2;
+  text-decoration: line-through;
+}
+
+.show {
+  opacity: .1;
+}
+
+.hide {
+  display: none;
+}
+
+.contentBox:hover .deleteThisOne {
+  visibility: visible;
+  opacity: .3;
+}
+
+.deleteThisOne {
+  padding-top: 2px;
+  opacity: .2;
+}
+
+input {
+
+  font-family: 'Work Sans', sans-serif;
+  outline: none;
+  border: none;
+  font-size: 15px;
+  padding-bottom: 3px;
 
 }
-.deleteThisOne:hover
-{
-  opacity: 0.2;
+
+
+.container {
+  margin-top: 2px;
+  margin-left: 4px;
 }
+
+.round {
+  position: relative;
+}
+
+.round label {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 14px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 14px;
+}
+
+.round label:after {
+  border: 1px solid rgba(19, 134, 106, 0.68);
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 3px;
+  left: 3px;
+  opacity: 0;
+  position: absolute;
+  top: 4px;
+  transform: rotate(-55deg);
+  width: 7px;
+}
+
+.round input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.round input[type="checkbox"]:checked + label {
+  background-color: #ffffff;
+  border-color: rgba(61, 179, 131, 0.18);
+}
+
+.round input[type="checkbox"]:checked + label:after {
+  opacity: .8;
+}
+
+img{
+  padding-top: 5px;
+  opacity: .7;
+  height: 7px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
