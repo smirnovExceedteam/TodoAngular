@@ -1,12 +1,12 @@
-<div class="wrapper" [ngClass]="localLength === 0? 'hideFooter':'' ">
-  <div class="container" >
-    <div class="leftCounter">{{localLeft}} items left</div>
+<div class="shadow wrapper" [ngClass]="{'hideFooter':length === 0}">
+  <div class="container">
+    <div class="leftCounter">{{selectedLength}} items left</div>
     <div class="filter">
-      <div class="filterStyle" (click)="changeFilterType(1)" [ngClass]="this.localFilterType === 1?'currentFilter':''">all</div>
-      <div class="filterStyle" (click)="changeFilterType(2)" [ngClass]="this.localFilterType === 2?'currentFilter':''">active</div>
-      <div class="filterStyle"(click)="changeFilterType(3)" [ngClass]="this.localFilterType === 3?'currentFilter':''">completed</div>
+      <div class="filterStyle" (click)="changeFilterType(FilterTypeEnumTemp.All)" [ngClass]="{currentFilter: this.filter === FilterTypeEnumTemp.All}">all</div>
+      <div class="filterStyle" (click)="changeFilterType(FilterTypeEnumTemp.Active)"[ngClass]="{currentFilter: this.filter === FilterTypeEnumTemp.Active}">active</div>
+      <div class="filterStyle"(click)="changeFilterType(FilterTypeEnumTemp.Completed)"  [ngClass]="{currentFilter: this.filter === FilterTypeEnumTemp.Completed}">completed</div>
     </div>
-    <div class="clearSelected" (click)="clearSelected()" [ngClass]="this.localSelectedCounter===0?'hideButton':''">
+    <div class="clearSelected" (click)="onClearSelected()" [ngClass]="{'hideButton':howManySelected === 0}">
       clear selected
     </div>
   </div>

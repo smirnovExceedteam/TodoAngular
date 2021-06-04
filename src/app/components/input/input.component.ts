@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {TodosDataService} from '../../services/todosData.service'
 
 @Component({
@@ -6,27 +6,32 @@ import {TodosDataService} from '../../services/todosData.service'
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.css'],
 })
-export class InputComponent implements OnInit {
+export class InputComponent implements OnInit, OnDestroy{
 
-  localLeft:number = 0
-  constructor(private todosDataService: TodosDataService) { }
+  localLeft: number = 0
 
-  sendTaskText(event:any) {
-    this.todosDataService.addTask(event.target.value)
-    event.target.value = ""
+  constructor(private todosDataService: TodosDataService) {
   }
 
   ngOnInit(): void {
     this.getLeft();
   }
+  ngOnDestroy() {
 
-  getLeft():void {
+  }
+
+  sendTaskText(event: any) {
+    this.todosDataService.addTask(event.target.value)
+    event.target.value = ""
+  }
+
+  getLeft(): void {
     this.todosDataService.getLength().subscribe((subscriber) => {
       this.localLeft = subscriber
     });
   }
 
-  selectAll(){
+  selectAll() {
     this.todosDataService.selectAll()
   }
 }

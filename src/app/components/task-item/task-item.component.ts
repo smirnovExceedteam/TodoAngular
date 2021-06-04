@@ -1,5 +1,5 @@
-import { Component, OnInit,Input } from '@angular/core';
-import {Task} from '../../models/Models'
+import {Component, OnInit, Input} from '@angular/core';
+import {Task} from '../../models/TaskModel'
 import {TodosDataService} from "../../services/todosData.service";
 
 @Component({
@@ -8,38 +8,38 @@ import {TodosDataService} from "../../services/todosData.service";
   styleUrls: ['./task-item.component.css']
 })
 export class TaskItemComponent implements OnInit {
-  filterType: number = 1
-  value:string = ""
-  isChanging:Boolean = false
+  value: string = ""
+  isChanging: Boolean = false
 
-  @Input() task:Task = {id:-1,text:"",completed:false}
+  @Input() task: Task | undefined
 
-  constructor(private todosDataService: TodosDataService) {}
+  constructor(private todosDataService: TodosDataService) {
+  }
 
   ngOnInit(): void {
-    this.getFilter()
   }
 
-  public getFilter():void{
-      this.todosDataService.getFilterType().subscribe((subscriber) => {
-      this.filterType = subscriber
-    });
-  }
 
-  public deleteTask(task:Task):void{
+  public deleteTask(task: Partial<Task> | undefined): void {
+    if (task === undefined) return
     this.todosDataService.deleteTask(task)
   }
 
-  public redactTask(str:string){
+  public redactTask(str: string | undefined) {
+    if (str === undefined) return
     this.value = str
     this.isChanging = true
   }
-  public changeTask(task:Task,event:any){
-    this.todosDataService.changeTask(task,event.target.value)
+
+  public changeTask(task: Partial<Task> | undefined, event: any) {
+    if (!task) return
+
+    this.todosDataService.changeTask(task, event.target.value)
     this.isChanging = false
   }
 
-  public taskCompleted(task:Task):void{
+  public taskCompleted(task: Partial<Task> | undefined): void {
+    if (!task) return
     this.todosDataService.taskCompleted(task)
   }
 

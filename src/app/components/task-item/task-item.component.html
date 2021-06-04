@@ -1,26 +1,13 @@
-<!--<div class="wrapper" >-->
-<!--  <div class="contentBox">-->
-<!--    <div class="container">-->
-<!--      <div class="round">-->
-<!--        <input type="checkbox" id="{{task.id}}"  [checked]="task.completed" (click)="taskCompleted(task)"/>-->
-<!--        <label for="{{task.id}}"></label>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <input type="text" *ngIf="this.isChanging" class="text" (keydown.enter)="this.changeTask(task,$event)" [value]="this.value">-->
-<!--    <div *ngIf="!this.isChanging" (dblclick)="redactTask(task.text)" [ngClass]="task.completed? 'textDecorateClass':''" class="text">{{task.text}}</div>-->
-<!--    <div class="deleteThisOne" (click)="deleteTask(task)" *ngIf="!this.isChanging">&#10006;</div>-->
-<!--  </div>-->
-<!--</div>-->
 <div class="wrapper" >
   <div class="contentBox">
     <div class="container">
       <div class="round">
-        <input type="checkbox" id="{{task.id}}"  [checked]="task.completed" (click)="taskCompleted(task)"/>
-        <label for="{{task.id}}"></label>
+        <input type="checkbox" id="{{task?._id}}"  [checked]="task?.completed" (click)="taskCompleted(task)"/>
+        <label for="{{task?._id}}"></label>
       </div>
     </div>
     <input type="text" *ngIf="this.isChanging" class="text" (keydown.enter)="this.changeTask(task,$event)" [value]="this.value">
-    <div *ngIf="!this.isChanging" (dblclick)="redactTask(task.text)" [ngClass]="task.completed? 'textDecorateClass':''" class="text">{{task.text}}</div>
+    <span *ngIf="!this.isChanging" (dblclick)="redactTask(task?.text)" [ngClass]="task?.completed ? 'textDecorateClass':''" class="text">{{task?.text}}</span>
     <div class="deleteThisOne" (click)="deleteTask(task)" *ngIf="!this.isChanging"><img src="../../../assets/img/krest.png" alt=""></div>
   </div>
 </div>

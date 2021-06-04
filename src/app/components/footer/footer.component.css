@@ -19,20 +19,20 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 20px;
+  height: 40px;
   border: 1px solid rgba(180, 180, 180, 0.199);
   border-radius: 2px;
   background-color: #fff;
-  font-size: 10px;
+  font-size: 20px;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .container > div{
-  flex-basis:70px;
+  flex-basis:140px;
 }
 
 .clearSelected {
@@ -56,9 +56,15 @@
   border-radius: 2px;
 }
 .filterStyle{
-  padding: 1px;
+  padding: 2px;
 }
 
 .leftCounter{
-  margin: 2px;
+  margin: 4px;
+}
+
+.shadow{
+  box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.15), 0 10px 0 -5px #eee,
+  0 10px 2px -4px rgba(0, 0, 0, 0.15),
+  0 20px 0 -10px #eee, 0 20px 2px -9px rgba(0, 0, 0, 0.15);
 }

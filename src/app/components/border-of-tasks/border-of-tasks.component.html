@@ -1,5 +1,5 @@
 <div>
-    <div class="wrapper" *ngFor="let task of localArray">
+    <div class="wrapper" *ngFor="let task of localArray$ | async">
       <app-task-item [task]="task"></app-task-item>
     </div>
 </div>

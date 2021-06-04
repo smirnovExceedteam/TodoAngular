@@ -14,8 +14,8 @@
 }
 
 .mainContent > input {
-  height: 28px;
-  font-size: 15px;
+  height: 56px;
+  font-size: 30px;
   font-family: 'Work Sans', sans-serif;
   outline: none;
   width: 90%;
@@ -25,10 +25,10 @@
 }
 
 .mainContent > img {
-  height: 10px;
+  height: 20px;
   opacity: .2;
-  margin-right: 10px;
-  padding-left: 7px;
-  padding-top: 10px;
+  margin-right: 20px;
+  padding-left: 14px;
+  padding-top: 20px;
 
 }

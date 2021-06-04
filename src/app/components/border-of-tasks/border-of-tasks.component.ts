@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { TodosDataService } from "../../services/todosData.service"
-import { Task } from "../../models/Models"
+import { Task } from "../../models/TaskModel"
+import {Observable, Subscription} from "rxjs";
 
 @Component({
   selector: 'app-border-of-tasks',
@@ -9,19 +10,13 @@ import { Task } from "../../models/Models"
 })
 export class BorderOfTasksComponent implements OnInit {
 
-  localArray: Task[] = [];
+
+  localArray$: Observable<Task[]> = new Observable<Task[]>();
 
   constructor(private todosDataService: TodosDataService) {
   }
 
   ngOnInit(): void {
-    this.getTasks();
+    this.localArray$ = this.todosDataService.getTasks();
   }
-
-  getTasks(): void {
-      this.todosDataService.getTasks().subscribe((subscriber) => {
-      this.localArray = subscriber
-    });
-  }
-
 }

@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <app-logo></app-logo>
+  <div class="shadowWrapper">
+    <div class="littleShadow">
+      <app-input></app-input>
+      <app-border-of-tasks></app-border-of-tasks>
+      <app-footer
+        [length]="length$ | async"
+        [selectedLength]="left$ | async"
+        [howManySelected]="selected$| async"
+        (filterChange)="changeFilter($event)"
+        (clearSelected)="clearSelected()"
+      >
+      </app-footer>
+    </div>
+    </div>
+
+</div>
+
+

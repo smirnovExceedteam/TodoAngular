@@ -1,0 +1,32 @@
+<div class="baseWrapper">
+  <div class="wrapper">
+    <div class="logo">
+      <h1>todos</h1>
+    </div>
+
+    <!--      <input id="firstInput" (keydown.enter)="submit()" type="text" placeholder="username" [(ngModel)]="username">-->
+    <!--      <input type="text" (keydown.enter)="submit()" placeholder="password" [(ngModel)]="password">-->
+    <form class="contentBox">
+      <mat-form-field class="example-full-width">
+        <input matInput  id="firstInput"  (keydown.enter)="submit()" type="text" placeholder="username"
+               [(ngModel)]="username">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+      <input matInput id="second" (keydown.enter)="submit()" type="text" placeholder="password"
+               [(ngModel)]="password">
+      </mat-form-field>
+      <div class="btn">
+        <button (click)="this.submit()" *ngIf="!this.isRegister">login</button>
+        <button (click)="this.submit()" *ngIf="this.isRegister">register</button>
+        <div class="createAccount" (click)="this.changeToRegiste()">
+          <div class="message">
+            {{message}}
+          </div>
+        </div>
+      </div>
+    </form>
+
+
+  </div>
+</div>
+

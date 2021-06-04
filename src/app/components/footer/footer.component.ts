@@ -1,45 +1,35 @@
-import {Component, OnInit} from '@angular/core';
-import {TodosDataService} from '../../services/todosData.service'
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {FilterTypeEnum} from "../../models/filterTypeEnum";
+
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
-export class FooterComponent implements OnInit{
 
-  localLength:number = 0
-  localLeft:number = 0
-  localFilterType: number = 0
-  localSelectedCounter: number = 0
 
-  constructor(private todosDataService: TodosDataService) {}
+export class FooterComponent{
+  FilterTypeEnumTemp = FilterTypeEnum
 
-  ngOnInit(): void {
-    this.getLeft();
+  @Input()  selectedLength: number | null = 0
+  @Input()  length: number | null = 0
+  @Input()  howManySelected: number | null = 0
+
+  @Input()  filter: FilterTypeEnum = FilterTypeEnum.All
+  @Output() filterChange = new EventEmitter<FilterTypeEnum>()
+  @Output() clearSelected = new EventEmitter<MouseEvent>()
+
+  constructor() {
   }
 
-  clearSelected():void{
-    this.todosDataService.clearSelected()
+  onClearSelected(): void {
+    this.clearSelected.emit()
   }
 
-  getLeft():void {
-    this.todosDataService.getLeft().subscribe((subscriber) => {
-      this.localLeft = subscriber
-    });
-    this.todosDataService.getLength().subscribe((subscriber) => {
-      this.localLength = subscriber
-    });
-    this.todosDataService.getFilterType().subscribe((subscriber) => {
-      this.localFilterType = subscriber
-    });
-    this.todosDataService.getSelectedCount().subscribe((subscriber) => {
-      this.localSelectedCounter = subscriber
-    });
-  }
-
-  changeFilterType(type:number):void{
-    this.todosDataService.changeFilterType(type)
+  changeFilterType(filter: FilterTypeEnum): void {
+    this.filterChange.emit(filter)
+    this.filter = filter
   }
 
 

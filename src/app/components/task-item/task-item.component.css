@@ -6,11 +6,14 @@
 }
 
 .text {
-  padding-left: 10px;
-  padding-top: 1px;
-  font-size: 15px;
+  line-height: 40px;
+  padding-left: 20px;
+  font-size: 30px;
   font-weight: 500;
-
+  height: 40px;
+  overflow: hidden;
+  padding-bottom: 0px;
+  padding-top: 0px;
 }
 
 .contentBox {
@@ -26,12 +29,11 @@
 
 .deleteThisOne {
   cursor: pointer;
-  width: 100%;
   display: flex;
   justify-content: flex-end;
   visibility: hidden;
-  font-size: 15px;
-  padding-right: 5px;
+  font-size: 30px;
+  padding-right: 10px;
   margin-left: auto;
   width: fit-content;
   color: red !important;
@@ -56,24 +58,20 @@
 }
 
 .deleteThisOne {
-  padding-top: 2px;
+  padding-top: 4px;
   opacity: .2;
 }
 
 input {
-
   font-family: 'Work Sans', sans-serif;
   outline: none;
   border: none;
-  font-size: 15px;
-  padding-bottom: 3px;
-
+  font-size: 30px;
 }
 
-
 .container {
-  margin-top: 2px;
-  margin-left: 4px;
+  margin-top: 4px;
+  margin-left: 8px;
 }
 
 .round {
@@ -85,11 +83,11 @@ input {
   border: 1px solid #ccc;
   border-radius: 50%;
   cursor: pointer;
-  height: 14px;
+  height: 28px;
   left: 0;
   position: absolute;
   top: 0;
-  width: 14px;
+  width: 28px;
 }
 
 .round label:after {
@@ -97,13 +95,13 @@ input {
   border-top: none;
   border-right: none;
   content: "";
-  height: 3px;
-  left: 3px;
+  height: 6px;
+  left: 6px;
   opacity: 0;
   position: absolute;
-  top: 4px;
+  top: 8px;
   transform: rotate(-55deg);
-  width: 7px;
+  width: 14px;
 }
 
 .round input[type="checkbox"] {
@@ -119,10 +117,10 @@ input {
   opacity: .8;
 }
 
-img{
-  padding-top: 5px;
+img {
+  padding-top: 10px;
   opacity: .7;
-  height: 7px;
+  height: 14px;
 }
 
 
